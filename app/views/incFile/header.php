@@ -8,4 +8,4 @@
 
     <title> Wikis</title>
 </head>
-<body class="body bg-white">
+<body class=" bg-white">

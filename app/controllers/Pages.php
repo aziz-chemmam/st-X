@@ -32,4 +32,9 @@
          
             $this->view('pages/registration' );
         }
+
+        public function home() {
+         
+            $this->view('pages/home' );
+        }
     }
