@@ -27,14 +27,8 @@
         class="w-full outline-none bg-transparent text-gray-600 font-semibold text-[15px]" />
     </div>
   </header>
-  <div class="flex">
-    <div class="border-6-solid w-16 h-full">
-        
-    </div>
-    <div>
-
-    </div>
-  </div>
+<section>
+</section>
 
 
-<!-- <?php require APPROOT."/views/incFile/footer.php"; ?> -->
+<?php require APPROOT."/views/incFile/footer.php"; ?> 
