@@ -37,4 +37,9 @@
          
             $this->view('pages/home' );
         }
+
+        public function categories() {
+         
+            $this->view('pages/categories' );
+        }
     }
