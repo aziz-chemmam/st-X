@@ -1,4 +1,6 @@
 <?php require APPROOT."/views/incFile/header.php"; ?>
+<?php require APPROOT."/views/incFile/sideBare.php"; ?>
+
 <main class="flex-1">
         <div class="py-6">
           <div class=" flex justify-between max-w-7xl mx-auto px-4 sm:px-6 md:px-8">

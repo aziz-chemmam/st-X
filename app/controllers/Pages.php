@@ -42,4 +42,19 @@
          
             $this->view('pages/categories' );
         }
+
+        public function dashboard() {
+         
+            $this->view('pages/dashboard' );
+        }
+
+        public function wikis() {
+         
+            $this->view('pages/wikis' );
+        }
+
+        public function tags() {
+         
+            $this->view('pages/tags' );
+        }
     }
