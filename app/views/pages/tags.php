@@ -12,10 +12,9 @@
           <div class="max-w-7xl mx-auto px-4 mt-10 sm:px-6 md:px-8">
             
             <table id="table">
-                <thead class="bg-gray-700 text-white">
+                <thead class=" bg-gray-700 text-white">
                     <th>ID</th>
                     <th>NAME</th>
-                    <th>DESCRIPTION</th>
                     <th>CREATED AT</th>
                 </thead>
                 <tbody class="bg-gray-300 bg-opacity-50">

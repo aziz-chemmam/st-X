@@ -14,9 +14,16 @@
             <table id="table">
                 <thead class="bg-gray-700 text-white">
                     <th>ID</th>
-                    <th>NAME</th>
-                    <th>DESCRIPTION</th>
-                    <th> AT</th>
+                    <th>TITLE</th>
+                    <th>CONTENT</th>
+                    <th> IMAGE</th>
+                    <th> USER ID</th>
+                    <th> CATEGORY ID</th>
+                    <th>CREATED AT</th>
+
+
+                    
+
                 </thead>
                 <tbody class="bg-gray-300 bg-opacity-50">
                   
