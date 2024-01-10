@@ -4,7 +4,7 @@
         private $categoryId;
         private $categoryName;
         private $categoryDesc;
-        private $date;
+        private $created_at;
 
 
 
@@ -37,12 +37,12 @@
             $this->categoryDesc = $categoryDesc;
         }
     
-        public function getDate() {
-            return $this->date;
+        public function getCreatedAt(){
+            return $this->created_at;
         }
     
-        public function setDate($date) {
-            $this->date = $date;
+        public function setCreatedAt($created_at){
+            $this->created_at = $created_at;
         }
     }
     

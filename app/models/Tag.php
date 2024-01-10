@@ -4,7 +4,7 @@
 class Tag {
     private $tagId;
     private $tagName ;
-    private $date ;
+    private $created_at ;
 
     public function __construct(){
 
@@ -25,13 +25,14 @@ class Tag {
     public function getTagName(){
         return $this->tagName ;
     }
-    public function setDate($date){
-        $this->date = $date;
+    public function getCreatedAt(){
+        return $this->created_at;
     }
-    public function getDate(){
-        return $this->date ;
+
+    public function setCreatedAt($created_at){
+        $this->created_at = $created_at;
     }
-    
+
 }
 
 

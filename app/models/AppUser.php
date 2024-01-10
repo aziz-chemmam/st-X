@@ -6,12 +6,12 @@ class AppUser {
     private $password ;
     private $email ;
     private $userImg ;
-    private $date;
+    private $created_at;
 
 
 
 
-    public function __construct(){
+     public function __construct(){
 
     }
       public function getUserId() {
@@ -54,13 +54,14 @@ class AppUser {
         $this->userImg = $userImg;
     }
 
-    public function getDate() {
-        return $this->date;
+    public function getCreatedAt(){
+        return $this->created_at;
     }
 
-    public function setDate($date) {
-        $this->date = $date;
+    public function setCreatedAt($created_at){
+        $this->created_at = $created_at;
     }
 }
+
 
 ?>

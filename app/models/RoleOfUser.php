@@ -1,7 +1,7 @@
 <?php
 
 class RoleOfUser{
-    private $userId ;
+    private AppUser $userId ;
     private Role $roleName ;
 
     public function __construct(){
@@ -12,7 +12,7 @@ class RoleOfUser{
         return $this->userId;
     }
 
-    public function setUserId($userId) {
+    public function setUserId(AppUser $userId) {
         $this->userId = $userId;
     }
 

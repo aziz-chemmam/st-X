@@ -7,7 +7,7 @@ class Wiki {
     private $wikiImg ;
     private Appuser $userId ;
     private Category $categoryId ;
-    private $date;
+    private $created_at;
 
     public function __construct(){
 
@@ -50,13 +50,13 @@ class Wiki {
     public function getCategoryId(){
         return $this->categoryId;
     }
-    public function setDate($date){
-        $this->date = $date;
-    }
-    public function getDate(){
-        return $this->date;
+    public function getCreatedAt(){
+        return $this->created_at;
     }
 
+    public function setCreatedAt($created_at){
+        $this->created_at = $created_at;
+    }
 }
 
 ?>
