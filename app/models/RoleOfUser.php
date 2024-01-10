@@ -1,8 +1,8 @@
 <?php
 
-class PoleOfUser{
+class RoleOfUser{
     private $userId ;
-    private $roleName ;
+    private Role $roleName ;
 
     public function __construct(){
 
@@ -20,7 +20,7 @@ class PoleOfUser{
         return $this->roleName;
     }
 
-    public function setRoleName($roleName) {
+    public function setRoleName(Role $roleName) {
         $this->roleName = $roleName;
     }
 }
