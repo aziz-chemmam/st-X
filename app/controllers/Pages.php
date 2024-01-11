@@ -57,4 +57,39 @@
          
             $this->view('pages/tags' );
         }
+
+
+
+
+        public function regestration(){
+            if($_SERVER["REQUEST_METHOD"] == "POST"){
+             $userId = uniqid();
+             $username = $_POST['username'];
+             $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
+             $email = $_POST['email'];
+ 
+             $userToAdd = new AppUser();
+             $userToAdd->setUserId($userId);
+             $userToAdd->setUsername($username);
+             $userToAdd->setpassword($password);
+             $userToAdd->setEmail($email);
+ 
+ 
+             $roleOfUser = new RoleOfUser();
+             $roleOfUser->setUserId($userToAdd);
+             $userServices = new UserService();
+             $roleOfUserService = new RoleOfUserServicesImp();
+             
+ 
+             try{
+                 $userServices->regestration($userToAdd);
+                 $roleOfUserService->addRoleOfUser($roleOfUser); 
+                 header("Location:". URLROOT ."/pages/login"); 
+             }catch(PDOException $e){
+                 die($e->getMessage());
+             }
+ 
+            }
+             $this->view('pages/registration');
+         }
     }

@@ -12,7 +12,7 @@ class RoleOfUser{
         return $this->userId;
     }
 
-    public function setUserId(AppUser $userId) {
+    public function setUserId(AppUser $userId) {    
         $this->userId = $userId;
     }
 
