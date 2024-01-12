@@ -1,78 +1,85 @@
 <?php require APPROOT."/views/incFile/header.php"; ?>
 
 
-<div class=" bg-gray-50">
-    
-  <div class="h-screen  flex flex-col justify-center  ">
-    <div class="sm:mx-auto sm:w-full sm:max-w-md">
-      <img class="mx-auto h-20 w-auto" src="/wikis/public/img/logo/kisspng-wikipedia-logo-wikimedia-foundation-wikimedia-comm-5bf0aede4a9c48.1983645215425000623056.png" alt="Workflow">
-      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-        Create  your account
-      </h2>
-     
-    </div>
+<div class="bg-gray-200">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+    <div id="form">
+  <form id="form" method="post" class="space-y-8 divide-y divide-gray-200">
+    <div class="space-y-8 divide-y divide-gray-200">
+      <div class="flex justify-center">
+        <img class="h-44 w-48" src="<?php echo URLROOT?>/img/wikipedia-removebg-preview.png" alt="">
+      </div>
 
-    <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-      <div class="bg-white py-8 px-4 shadow sm:roun ded-lg sm:px-10">
-
-
-        <form method="POST"  class="max-w-md mx-auto">
-          <div class="relative z-0 w-full mb-5 group">
-              <input type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-600 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-              <label for="email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
-          </div>
-          <div class="relative z-0 w-full mb-5 group">
-              <input type="password" name="password" id="password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-600 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-              <label for="password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-          </div>
-          <div class="relative z-0 w-full mb-5 group">
-            <input type="text" name="username" id="adresse" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-600 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-            <label for="username" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">User Name</label>
+      <div class="pt-8">
+        <div>
+          <h3 class="text-lg leading-6 font-medium text-gray-900">
+            Create a Acoount
+          </h3>
+          <p class="mt-1 text-sm text-gray-500">
+            Use a permanent address where you can receive mail.
+          </p>
         </div>
-        
-          <div class="relative z-0 w-full mb-5 group"> 
+        <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
           <div class="sm:col-span-3">
+            <label for="first-name" class="block text-sm font-medium text-gray-700">
+              Username
+            </label>
+            <div class="mt-1 ">
+              <input type="text" name="username" id="username" autocomplete="given-name" class=" py-2 px-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+              <p id="usernameError" class="text-red-600 font-medium"></p>
+            </div>
+          </div>
+
+          <div class="sm:col-span-3">
+            <label for="last-name" class="block text-sm font-medium text-gray-700">
+              Password
+            </label>
+            <div class="mt-1">
+              <input type="text" name="pw" id="pw" autocomplete="family-name" class=" py-2 px-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+              <p id="pwError" class="text-red-600 font-medium"></p>
+            </div>
+          </div>
+
+          <div class="sm:col-span-4">
+            <label for="email" class="block text-sm font-medium text-gray-700">
+              Email address
+            </label>
+            <div class="mt-1">
+              <input id="email" name="email" type="email" autocomplete="email" class="py-2 px-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-[770px] sm:text-sm border-gray-300 rounded-md">
+              <p id="emailError" class="text-red-600 font-medium"></p>
+            </div>
+          </div>
+
+         
+      </div>
+
       
-            
-        </div>
-        <div class=" flex justify-center items-center ">
-        <button type="submit" name="add" class="text-white  bg-gray-700 mt-4  font-bold rounded-lg text-sm w-full sm:w-auto px-9 py-2.5 text-center ">Submit</button>
-      </div>
-        </form>
-
-      </div>
     </div>
 
-    
-  </div>
-  <footer
-  class="flex flex-col items-center text-center text-white mt-48  bg-gray-700">
-  <div class="container p-6">
-    <div class="">
-      <p class="flex items-center justify-center">
-        <span class="mr-4">Register for free</span>
-        <button
-          type="button"
-          class=" rounded-full border-2  px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-300 ease-in-out hover:border-neutral-100 hover:bg-neutral-100 hover:bg-opacity-30"
-          data-te-ripple-init
-          data-te-ripple-color="light">
-          Sign in!  
+    <div class="pt-5">
+      <div class="flex justify-center">
+        <a href="<?php echo URLROOT?> /customer/home"><button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Cancel
+        </button></a>
+        <button type="submit" name="addRegister" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-800 hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Save
         </button>
-      </p>
+      </div>
+    </div>
+  </form>
+  </div>
+
+      </div>
     </div>
   </div>
 
-  <div
-    class="w-full p-4 text-center"
-    style="background-color: rgba(0, 0, 0, 0.2)">
-    © 2024 Copyright:
-    <a class="text-white" href="https://tw-elements.com/">TW elements</a>
-   </div>
-  </footer>
 
-  </div>
 
- 
+
+
+
+
 
 
 <?php require APPROOT."/views/incFile/footer.php"; ?>

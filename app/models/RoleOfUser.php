@@ -1,28 +1,30 @@
-<?php
-
-class RoleOfUser{
-    private AppUser $userId ;
-    private Role $roleName ;
+<?php 
+class RoleOfUser {
+    private Role $role;
+    private AppUser $user;
 
     public function __construct(){
 
     }
 
-    public function getUserId() {
-        return $this->userId;
+    public function getRole(){
+        return $this->role;
     }
 
-    public function setUserId(AppUser $userId) {    
-        $this->userId = $userId;
+    public function setRole(Role $role){
+        $this->role = $role;
     }
 
-    public function getRoleName() {
-        return $this->roleName;
+    // Getter and Setter for user
+    public function getUser(){
+        return $this->user;
     }
 
-    public function setRoleName(Role $roleName) {
-        $this->roleName = $roleName;
+    public function setUser(AppUser $user){
+        $this->user = $user;
     }
+    
 }
+
 
 ?>

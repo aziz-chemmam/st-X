@@ -6,7 +6,7 @@
           <div class=" flex justify-between max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
             <h1 class="text-2xl font-bold text-gray-900">Categories</h1>
             <div>
-            <button id="btn" class="w-full bg-gray-700 flex items-center justify-center border border-transparent rounded-md py-2 px-4 text-base font-medium text-white hover:bg-orange">Add Categorie</button>
+            <button id="button" class="w-full bg-gray-700 flex items-center justify-center border border-transparent rounded-md py-2 px-4 text-base font-medium text-white hover:bg-orange">Add Categorie</button>
             </div>
           </div>
           <div class="max-w-7xl mx-auto px-4 mt-10 sm:px-6 md:px-8">
@@ -28,7 +28,7 @@
 <div id="formulaire" class="bg-gray-900 w-[560px] ml-64 scale-0 duration-700 ">
 <form class="max-w-md mx-auto bg-gray-900 py-10">
   <div class="flex justify-end" >
-    <svg id="rmForm"  class="w-6 h-6 text-white dark:text-white cursor-pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+    <svg id="Form"  class="w-6 h-6 text-white dark:text-white cursor-pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m13 7-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
   </svg>
     

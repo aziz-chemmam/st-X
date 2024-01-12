@@ -1,5 +1,7 @@
 <?php
 
+
+
     class Pages extends Controller{
         public $userModel;
         public function __construct()
@@ -16,80 +18,82 @@
             
             $this->view('pages/index' , $data );
         }
-        public function about() {
-            $data = [
-                'title' => 'About us' 
-            ];
-            $this->view('pages/about' , $data);
-        }
+        
+        
+        public function registration(){
+           if(isset($_POST['addRegister'])){
+            $userId = uniqid();
+            $username = $_POST['username'];
+            $pw = $_POST['pw'];
+            $email = $_POST['email'];
 
-        public function login() {
-         
-            $this->view('pages/login' );
-        }
-
-        public function registration() {
-         
-            $this->view('pages/registration' );
-        }
-
-        public function home() {
-         
-            $this->view('pages/home' );
-        }
-
-        public function categories() {
-         
-            $this->view('pages/categories' );
-        }
-
-        public function dashboard() {
-         
-            $this->view('pages/dashboard' );
-        }
-
-        public function wikis() {
-         
-            $this->view('pages/wikis' );
-        }
-
-        public function tags() {
-         
-            $this->view('pages/tags' );
-        }
+            $userToAdd = new AppUser();
+            $userToAdd->setUserId($userId);
+            $userToAdd->setUsername($username);
+            $userToAdd->setPw($pw);
+            $userToAdd->setEmail($email);
 
 
+            $role = new Role();
+            $role->setRoleName("author");
 
 
-        public function regestration(){
-            if($_SERVER["REQUEST_METHOD"] == "POST"){
-             $userId = uniqid();
-             $username = $_POST['username'];
-             $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
-             $email = $_POST['email'];
- 
-             $userToAdd = new AppUser();
-             $userToAdd->setUserId($userId);
-             $userToAdd->setUsername($username);
-             $userToAdd->setpassword($password);
-             $userToAdd->setEmail($email);
- 
- 
-             $roleOfUser = new RoleOfUser();
-             $roleOfUser->setUserId($userToAdd);
-             $userServices = new UserService();
-             $roleOfUserService = new RoleOfUserServicesImp();
-             
- 
-             try{
-                 $userServices->regestration($userToAdd);
-                 $roleOfUserService->addRoleOfUser($roleOfUser); 
-                 header("Location:". URLROOT ."/pages/login"); 
-             }catch(PDOException $e){
-                 die($e->getMessage());
-             }
- 
+            $roleOfUser = new RoleOfUser();
+            $roleOfUser->setUser($userToAdd);
+            $roleOfUser->setRole($role);
+            $SecurityService = new SecurityServiceImp();
+            $roleOfUserService = new RoleOfUserServicesImp();
+
+            try{
+                $SecurityService->register($userToAdd);
+                $roleOfUserService->addRoleOfUser($roleOfUser); 
+                header("Location:". URLROOT ."/pages/login"); 
+            }catch(PDOException $e){
+                die($e->getMessage());
             }
-             $this->view('pages/registration');
-         }
+
+           }
+            $this->view('pages/registration');
+        }
+
+
+        // public function login() {
+        //     if (isset($_POST["login"])) {
+        //         $username = $_POST["username"];
+        //         $password = $_POST["pw"]; // Don't use password_verify here
+        
+        //         $logging = new AppUser();
+        //         $logging->setUsername($username);
+        //         $logging->setPw($password);
+        
+        //         $securityService = new SecurityServiceImp();
+        
+        //         try {
+        //             $loggingUserData = $securityService->login($logging);
+        //             if ($loggingUserData) {
+                        
+        //                 $_SESSION["username"] = $username;
+        //                 $_SESSION["userId"] = $loggingUserData->userId;
+        
+        //                 $role = $securityService->checkForRole($loggingUserData->userId);
+        
+        //                 if ($role->roleName == "author") {
+        //                     $_SESSION["roleName"] = "author";
+        //                     header("Location:". URLROOT . "/customer/home");
+        //                     exit();
+        //                 } else if($role->roleName == "admin") {
+        //                     $_SESSION["roleName"] = "admin";
+        //                     header("Location:" . URLROOT . "/admin/dashboard");
+        //                     exit();
+        //                 }
+        //             }
+        //         } catch (PDOException $e) {
+        //             die($e->getMessage());
+        //         }
+        //     }
+        //     $this->view('pages/login');
+        // }
+
     }
+
+?>

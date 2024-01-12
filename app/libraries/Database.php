@@ -26,19 +26,12 @@
 
 
         public static function getInstance(){
-
             if (is_null(self::$_instance)) {
-
                 self::$_instance = new self();
             }
-            
             return self::$_instance;
 
         }
-
-
-
-
         // Function to Connect With Database 
         public function connect() {
             
@@ -92,12 +85,12 @@
         }
 
         // Get Result from Database  Return Array Of Object
-        public function manyObjects() {
+        public function fetchMultipleRows() {
             $this->execute();
             return $this->stmt->fetchAll(PDO::FETCH_OBJ);
         }
         // Return One Record From Database 
-        public function oneObject() {
+        public function fetchOneRow() {
             $this->execute();
             return $this->stmt->fetch(PDO::FETCH_OBJ);
         }

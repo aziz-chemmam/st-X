@@ -1,20 +1,17 @@
-<?php
-
+<?php 
 class Role {
-    private $roleName ;
-
+    private $roleName;
     public function __construct(){
 
     }
-
     public function getRoleName(){
-        return $this->roleName ;
+        return $this->roleName;
     }
-
     public function setRoleName($roleName){
         $this->roleName = $roleName;
-    }
-
+    }   
 }
+
+
 
 ?>

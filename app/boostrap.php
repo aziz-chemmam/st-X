@@ -6,9 +6,9 @@ require_once 'config/config.php';
 function Autoloader($class) {
     $paths = [
         APPROOT."/libraries/",
-        APPROOT."/services/",
         APPROOT."/models/",
-        APPROOT."/security/"
+        APPROOT."/services/interfaces/",
+        APPROOT."/services/implementation/",
     ];
 
     foreach ($paths as $path) {

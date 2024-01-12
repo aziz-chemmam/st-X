@@ -3,12 +3,8 @@
 define('DB_HOST' , 'localhost');
 define('DB_USER' , 'root');
 define('DB_PASS' , '');
-define('DB_NAME' , 'wikis0');
-// App Root
+define('DB_NAME' , 'wikis');
 define('APPROOT' , dirname(dirname(__FILE__)));
-
-// App URL
-define('URLROOT' , 'http://localhost/wikis '); //http://localhost/FILEPROJECT 
-// SiteName
+define('URLROOT' , 'http://localhost/wikis '); 
 define('SITENAME' , 'Wikis');
 ?>
