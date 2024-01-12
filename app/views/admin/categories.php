@@ -60,6 +60,6 @@
         
       </main>
 
-      <script src=""></script>
-
+      
+      <script defer src="<?php echo URLROOT?>/js/category.js"></script>
 <?php require APPROOT."/views/incFile/footer.php"; ?>
