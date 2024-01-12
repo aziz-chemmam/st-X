@@ -32,7 +32,14 @@ class CategoryServiceImp implements CategoryService {
     }
 
     public function displayCategory(){
+        $displayCategoryQuery = "SELECT * FROM category";
+        $this->db->query($displayCategoryQuery);
 
+        try {
+           return $this->db->fetchMultipleRows();
+        } catch(PDOException $e){
+            die($e->getMessage());
+        }
     }
 }
 

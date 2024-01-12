@@ -83,10 +83,10 @@
                         if ($role->roleName == "autuer") {
                             $_SESSION["roleName"] = "autuer";
                             header("Location:". URLROOT . "/customer/home");
-                            exit();
-                        } else if($role->roleName == "admin") {
+
+                        }else if($role->roleName == "admin") {
                             $_SESSION["roleName"] = "admin";
-                            header("Location:" . URLROOT . "/admin/adminDashboard");
+                            header("Location:" . URLROOT . "/admin/admin");
                             exit();
                         }
                     }

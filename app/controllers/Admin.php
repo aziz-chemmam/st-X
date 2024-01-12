@@ -7,13 +7,15 @@ class Admin extends Controller {
    
  
 
-   public function adminDashboard(){
+   public function admin(){
     $securityService = new SecurityServiceImp();
     $securityService->checkForAdmin();  
-    var_dump($_SESSION["roleName"]);
-    $this->view('admin/adminDashboard');
+    // var_dump($_SESSION["roleName"]);
+    $this->view('admin/admin');
+
    }
 
+  
 
 
 
@@ -41,7 +43,13 @@ class Admin extends Controller {
         $this->view('admin/categories');
    }
 
-   public function 
+   public function displayCategory(){
+
+    $categoryService = new CategoryServiceImp();
+    $displayCategoryQuery = $categoryService->displayCategory();
+    $this->view('admin/categories', ['categories' => $displayCategoryQuery]);
+
+   }
 
 
 
