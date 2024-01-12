@@ -43,14 +43,16 @@ class Admin extends Controller {
         $this->view('admin/categories');
    }
 
-   public function displayCategory(){
-
+     public function displayCategory(){
     $categoryService = new CategoryServiceImp();
-    $displayCategoryQuery = $categoryService->displayCategory();
-    $this->view('admin/categories', ['categories' => $displayCategoryQuery]);
-
-   }
-
+    try{
+        $categories = $categoryService->displayCategory();
+        echo json_encode($categories);
+    }
+    catch(PDOException $e){
+        die($e->getMessage());
+    }
+}
 
 
 

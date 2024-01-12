@@ -18,9 +18,11 @@
                     <th>DESCRIPTION</th>
                     <th>CREATED AT</th>
                 </thead>
-                <tbody class="bg-gray-300 bg-opacity-50">
-                  
-                  <td></td>
+
+                <tbody id="category" class="bg-gray-300 bg-opacity-50">
+                       
+
+
 
                 </tbody>
             </table>
@@ -57,5 +59,7 @@
         </div>
         
       </main>
+
+      <script src=""></script>
 
 <?php require APPROOT."/views/incFile/footer.php"; ?>
