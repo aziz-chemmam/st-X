@@ -10,7 +10,7 @@ class Customer extends Controller{
 
         public function index(){
             $securityService = new SecurityServiceImp();
-            $securityService->checkForAuthor();
+            $securityService->checkForautuer();
            
            $this->view("customer/home");
         }

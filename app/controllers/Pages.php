@@ -19,13 +19,7 @@
             $this->view('pages/index' , $data );
         }
 
-        public function login() {
-
-           
-
-            
-            $this->view('pages/login' );
-        }
+    
         
         
         public function registration(){
@@ -68,7 +62,7 @@
         public function login() {
             if (isset($_POST["login"])) {
                 $username = $_POST["username"];
-                $password = $_POST["pw"]; // Don't use password_verify here
+                $password = $_POST["pw"]; 
         
                 $logging = new AppUser();
                 $logging->setUsername($username);
@@ -84,6 +78,7 @@
                         $_SESSION["userId"] = $loggingUserData->userId;
         
                         $role = $securityService->checkForRole($loggingUserData->userId);
+                        $_SESSION["roleName"] = $role->roleName;
         
                         if ($role->roleName == "autuer") {
                             $_SESSION["roleName"] = "autuer";
@@ -91,7 +86,7 @@
                             exit();
                         } else if($role->roleName == "admin") {
                             $_SESSION["roleName"] = "admin";
-                            header("Location:" . URLROOT . "/admin/dashboard");
+                            header("Location:" . URLROOT . "/admin/adminDashboard");
                             exit();
                         }
                     }

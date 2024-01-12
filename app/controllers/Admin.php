@@ -7,11 +7,11 @@ class Admin extends Controller {
    
  
 
-   public function dashboard(){
+   public function adminDashboard(){
     $securityService = new SecurityServiceImp();
     $securityService->checkForAdmin();  
-    // var_dump($_SESSION["roleName"]);
-    $this->view('admin/dashboard');
+    var_dump($_SESSION["roleName"]);
+    $this->view('admin/adminDashboard');
    }
 
 
@@ -40,6 +40,8 @@ class Admin extends Controller {
     }
         $this->view('admin/categories');
    }
+
+   public function 
 
 
 
@@ -76,11 +78,11 @@ class Admin extends Controller {
 
 
    public function user(){
-    if(isset($_POST["Adduser"])){
+    if(isset($_POST["addUser"])){
     $userId = uniqid();
-    $username = $_POST["username"];
-    $pw = $_POST["pw"];
-    $email = $_POST["email"];
+    $username = $_POST['username'];
+    $pw = $_POST['pw'];
+    $email = $_POST['email'];
 
     $userToAdd = new AppUser();
     $userToAdd->setUserId($userId);
@@ -88,23 +90,28 @@ class Admin extends Controller {
     $userToAdd->setPw($pw);
     $userToAdd->setEmail($email);
 
-    $roleOfAdmin = new RoleOfUser();
-    $roleOfAdmin->setUser($userToAdd);
+    $role = new Role();
+    $role->setRoleName("admin");
+
+    $roleOfUser = new RoleOfUser();
+    $roleOfUser->setUser($userToAdd);
+    $roleOfUser->setRole($role);
     $userService = new UserServiceImp();
-    $roleOfAdminService = new RoleOfUserServicesImp();
+    $roleOfUserService = new RoleOfUserServicesImp();
     
     try {
         $userService->addUser($userToAdd);
-        $roleOfAdminService->AddRoleOfAdmin($roleOfAdmin);
+        $roleOfUserService->addRoleOfUser($roleOfUser);
     }catch(PDOException $e){
         die($e->getMessage());
     }
-
-
 }
-
 $this->view('admin/user');
 }
+
+
+
+   
 }
 
 

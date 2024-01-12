@@ -14,29 +14,27 @@
                 <a  class="text-xs text-center text-gray-500 uppercase">login</a>
                 <span class="border-b w-1/5 lg:w-1/4"></span>
             </div>
+            <form method="post" method="post">
             <div class="mt-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
-                <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" />
+                <label class="block text-gray-700 text-sm font-bold mb-2">User Name</label>
+                <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" name="username" type="text" />
             </div>
             <div class="mt-4">
                 <div class="flex justify-between">
                     <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
                     <a href="#" class="text-xs text-gray-500">Forget Password?</a>
                 </div>
-                <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="password" />
+                <input class="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" name="pw" type="password" />
             </div>
             <div class="mt-8">
-                <button class="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Login</button>
+                <button name="login" class="bg-gray-700 text-white font-bold py-2 px-4 w-full rounded hover:bg-gray-600">Login</button>
             </div>
-            <div class="mt-4 flex items-center justify-between">
-                <span class="border-b w-1/5 md:w-1/4"></span>
-                <a href="<?php echo URLROOT?>/pages/registration" class="text-xs text-gray-500 uppercase">or sign up</a>
-                <span class="border-b w-1/5 md:w-1/4"></span>
-            </div>
+            </form>
+           
         </div>
     </div>
     <footer
-  class="flex flex-col items-center text-center text-white mt-[65px]  bg-gray-700">
+  class="flex flex-col items-center text-center text-white mt-[88px]  bg-gray-700">
   <div class="container p-6">
     <div class="">
       <p class="flex items-center justify-center">

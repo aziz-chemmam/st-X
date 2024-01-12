@@ -1,6 +1,6 @@
 <?php 
 
-class SecurityServiceImp implements SecurityService{
+class SecurityServiceImp implements SecurityService {
     private Database $db;
 
     public function __construct(){
@@ -52,16 +52,16 @@ class SecurityServiceImp implements SecurityService{
         if(empty($_SESSION["roleName"])){
             header("location:".URLROOT);
         }
-        else if($_SESSION["roleName"] === "author"){
+        else if($_SESSION["roleName"] === "autuer"){
             header("location:".URLROOT."customer/home");
         }
     }
 
-    public function checkForAuthor(){
+    public function checkForautuer(){
         if(empty($_SESSION["roleName"])){
             header("location:".URLROOT);
     }else if ($_SESSION["roleName"] === "admin"){
-            header("location:".URLROOT."admin/dashboard");
+            header("location:".URLROOT."admin/adminDashboard");
     }
 }
 
