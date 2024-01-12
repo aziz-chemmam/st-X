@@ -18,6 +18,14 @@
             
             $this->view('pages/index' , $data );
         }
+
+        public function login() {
+
+           
+
+            
+            $this->view('pages/login' );
+        }
         
         
         public function registration(){
@@ -35,7 +43,7 @@
 
 
             $role = new Role();
-            $role->setRoleName("author");
+            $role->setRoleName("autuer");
 
 
             $roleOfUser = new RoleOfUser();
@@ -57,42 +65,42 @@
         }
 
 
-        // public function login() {
-        //     if (isset($_POST["login"])) {
-        //         $username = $_POST["username"];
-        //         $password = $_POST["pw"]; // Don't use password_verify here
+        public function login() {
+            if (isset($_POST["login"])) {
+                $username = $_POST["username"];
+                $password = $_POST["pw"]; // Don't use password_verify here
         
-        //         $logging = new AppUser();
-        //         $logging->setUsername($username);
-        //         $logging->setPw($password);
+                $logging = new AppUser();
+                $logging->setUsername($username);
+                $logging->setPw($password);
         
-        //         $securityService = new SecurityServiceImp();
+                $securityService = new SecurityServiceImp();
         
-        //         try {
-        //             $loggingUserData = $securityService->login($logging);
-        //             if ($loggingUserData) {
+                try {
+                    $loggingUserData = $securityService->login($logging);
+                    if ($loggingUserData) {
                         
-        //                 $_SESSION["username"] = $username;
-        //                 $_SESSION["userId"] = $loggingUserData->userId;
+                        $_SESSION["username"] = $username;
+                        $_SESSION["userId"] = $loggingUserData->userId;
         
-        //                 $role = $securityService->checkForRole($loggingUserData->userId);
+                        $role = $securityService->checkForRole($loggingUserData->userId);
         
-        //                 if ($role->roleName == "author") {
-        //                     $_SESSION["roleName"] = "author";
-        //                     header("Location:". URLROOT . "/customer/home");
-        //                     exit();
-        //                 } else if($role->roleName == "admin") {
-        //                     $_SESSION["roleName"] = "admin";
-        //                     header("Location:" . URLROOT . "/admin/dashboard");
-        //                     exit();
-        //                 }
-        //             }
-        //         } catch (PDOException $e) {
-        //             die($e->getMessage());
-        //         }
-        //     }
-        //     $this->view('pages/login');
-        // }
+                        if ($role->roleName == "autuer") {
+                            $_SESSION["roleName"] = "autuer";
+                            header("Location:". URLROOT . "/customer/home");
+                            exit();
+                        } else if($role->roleName == "admin") {
+                            $_SESSION["roleName"] = "admin";
+                            header("Location:" . URLROOT . "/admin/dashboard");
+                            exit();
+                        }
+                    }
+                } catch (PDOException $e) {
+                    die($e->getMessage());
+                }
+            }
+            $this->view('pages/login');
+        }
 
     }
 
