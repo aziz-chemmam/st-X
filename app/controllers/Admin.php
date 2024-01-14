@@ -119,6 +119,17 @@ class Admin extends Controller {
 $this->view('admin/user');
 }
 
+public function displayUsers(){
+    $userService = new UserServiceImp();
+    try{
+        $users = $userService->displayUsers();
+        echo json_encode($users);
+    }
+    catch(PDOException $e){
+        die($e->getMessage());
+    }
+}
+
 
 
    

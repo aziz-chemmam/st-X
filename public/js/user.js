@@ -1,25 +1,28 @@
 $(document).ready(function() {
-    function fetshCategory(response) {
-        $("#category").empty();
+    function fetshUser(response) {
+        $("#user").empty();
         $.each(response, function(index, row){
-            $("#category").append(`
+            $("#user").append(`
 
             <tr>
             <td>${row.UserId}</td>
-            <td>${row.categoryName}</td>
-            <td>${row.categoryDesc}</td>
+            <td>${row.username}</td>
+            <td>${row.pw}</td>
+            <td>${row.email}</td>
             <td>${row.created_at}</td>
+            
+
             </tr>
 
             `);
         });
     }
     $.ajax({
-        url : "http://localhost/wikis/admin/displayCategory",
+        url : "http://localhost/wikis/admin/displayUsers",
         type: "GET",
         dataType: "json",
         success: function(response) {
-            fetshCategory(response);
+            fetshUser(response);
         }
         
     })

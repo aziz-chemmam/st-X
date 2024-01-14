@@ -21,13 +21,21 @@ class UserServiceImp implements UserService {
         }
 
     }
-    public function displayUser(){
+    public function displayUsers(){
+        $displayUserQuery = "SELECT * FROM appUser";
+        $this->db->query($displayUserQuery);
 
+        try {
+           return $this->db->fetchMultipleRows();
+        } catch(PDOException $e){
+            die($e->getMessage());
+        }
     }
     public function updateUser(AppUser $user){
 
     }
     public function deleteUser($userId){
+
 
     }
 }

@@ -4,7 +4,7 @@
 <main class="flex-1">
         <div class="py-6">
           <div class=" flex justify-between max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            <h1 class="text-2xl font-bold text-gray-900">Categories</h1>
+            <h1 class="text-2xl font-bold text-gray-900">Tags</h1>
             <div>
             <button id="button" class="w-full bg-gray-700 flex items-center justify-center border border-transparent rounded-md py-2 px-4 text-base font-medium text-white hover:bg-orange">Add Categorie</button>
             </div>

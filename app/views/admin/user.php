@@ -4,7 +4,7 @@
 <main class="flex-1">
         <div class="py-6">
           <div class=" flex justify-between max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            <h1 class="text-2xl font-bold text-gray-900">Categories</h1>
+            <h1 class="text-2xl font-bold text-gray-900">Users</h1>
             <div>
             <button id="button" class="w-full bg-gray-700 flex items-center justify-center border border-transparent rounded-md py-2 px-4 text-base font-medium text-white hover:bg-orange">Add Categorie</button>
             </div>
@@ -20,7 +20,7 @@
                     <th>CREATED AT</th>
                 </thead>
 
-                <tbody id="category" class="bg-gray-300 bg-opacity-50">
+                <tbody id="user" class="bg-gray-300 bg-opacity-50">
                        
 
 
@@ -38,7 +38,7 @@
     
   </div>
   <div class="flex justify-center">
-  <h1 class="text-white font-bold text-2xl">Add Categorie</h1>
+  <h1 class="text-white font-bold text-2xl">Add Users</h1>
   </div>
   <div class="relative z-0 w-full mt-5 mb-5 group">
       <input type="text" name="username" id="username" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
@@ -66,5 +66,5 @@
       </main>
 
       
-<script defer src="<?php echo URLROOT?>/js/users.js"></script>
+<script  src="<?php echo URLROOT?>/js/user.js"></script>
 <?php require APPROOT."/views/incFile/footer.php"; ?>
