@@ -14,7 +14,6 @@
 
         });
     </script>
-
-    <title> Wikis</title>
+    <title><?= SITENAME;?></title>
 </head>
-<body class=" bg-white">
+<body class="body bg-gray-200 ">

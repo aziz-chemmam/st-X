@@ -19,7 +19,6 @@
             }
             
         }
-        
 
         // Require the controller 
         require_once '../app/controllers/' . $this->currentController . '.php';

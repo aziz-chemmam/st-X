@@ -6,7 +6,7 @@ class UserServiceImp implements UserService {
         $this->db = Database::getInstance();
     }
     public function addUser(AppUser $user){
-        $userToAddQuery = "INSERT INTO appUser (userId, username, pw, email, userImg, created_at) VALUES (:userId, :username, :pw, :email, :userImg, NOW())";
+        $userToAddQuery = "INSERT INTO appUser VALUES (:userId, :username, :pw, :email, :userImg, NOW())";
         $this->db->query($userToAddQuery);
         $this->db->bind(":userId", $user->getUserId());
         $this->db->bind(":username", $user->getUsername());
@@ -21,23 +21,38 @@ class UserServiceImp implements UserService {
         }
 
     }
-    public function displayUsers(){
-        $displayUserQuery = "SELECT * FROM appUser";
-        $this->db->query($displayUserQuery);
+    public function displayUser(){
+        $fetshAllUsersQuery = "SELECT * FROM appUser ORDER BY created_at DESC";
+        $this->db->query($fetshAllUsersQuery);
 
         try {
-           return $this->db->fetchMultipleRows();
-        } catch(PDOException $e){
+            return $this->db->fetchMultipleRows();
+        }catch(PDOException $e){
+            die($e->getMessage());
+        }
+
+    }
+
+    public function deleteUser($userId){
+        $deleteUser = "DELETE FROM appUser WHERE userId = :userId";
+        $this->db->query($deleteUser);
+        $this->db->bind(":userId",$userId);
+        try {
+            $this->db->execute();
+        }catch(PDOException $e){
             die($e->getMessage());
         }
     }
+    public function countUsers() {     
+        $this->db->query("SELECT COUNT(*) as userCount FROM appUser ");       
+        return $result = $this->db->fetchOneRow()->userCount;         
+    }
+         
+  
     public function updateUser(AppUser $user){
 
     }
-    public function deleteUser($userId){
-
-
-    }
+   
 }
 
 

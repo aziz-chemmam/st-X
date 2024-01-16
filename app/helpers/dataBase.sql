@@ -1,6 +1,7 @@
-CREATE DATABASE IF NOT EXISTS wikis;
 
-USE wikis;
+CREATE DATABASE IF NOT EXISTS wiki;
+
+USE wiki;
 
 CREATE TABLE IF NOT EXISTS role (
     roleName VARCHAR(50) PRIMARY KEY
@@ -46,7 +47,7 @@ CREATE TABLE IF NOT EXISTS tag (
     tagId VARCHAR(50) PRIMARY KEY,
     tagName VARCHAR(50) NOT NULL,
     created_at DATE
-);
+); 
 
 CREATE TABLE IF NOT EXISTS tagsOfWiki (
     wikiId VARCHAR(50),

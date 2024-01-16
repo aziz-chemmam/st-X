@@ -1,10 +1,12 @@
 <?php require APPROOT . '/views/incFile/header.php'; ?>
-<?php require APPROOT . '/views/incFile/navBar.php'; ?>
+<?php require APPROOT . '/views/incFile/navVisiteur.php'; ?>
 
 
 <div class="px-20 mt-20">
 
-
+  <div class="flex justify-star">
+    <a href="<?php echo URLROOT?> /pages/login"><button class="font-medium rounded px-2 py-1 text-black bg-blue-800 text-xl">Add Wiki</button></a>
+  </div>
     <div class="flex justify-center">
         <h1 class="font-bold text-black text-3xl">WIKIS</h1>
     </div>

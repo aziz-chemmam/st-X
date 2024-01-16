@@ -96,9 +96,14 @@
         }
 
         // Get Number Of Row In the Table 
-        public function countRow() {
+        
+        public function rowCount()
+        {
+            $this->stmt->execute();
             return $this->stmt->rowCount();
         }
+       
+
 
     }
 

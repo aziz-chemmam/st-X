@@ -1,6 +1,11 @@
 <?php require APPROOT."/views/incFile/header.php"; ?>
 
+<!--
+  This example requires Tailwind CSS v2.0+
 
+  The alpine.js code is *NOT* production ready and is included to preview
+  possible interactivity
+-->
 <div class="bg-gray-200">
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">

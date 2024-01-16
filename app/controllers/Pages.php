@@ -1,7 +1,5 @@
 <?php
 
-
-
     class Pages extends Controller{
         public $userModel;
         public function __construct()
@@ -18,8 +16,6 @@
             
             $this->view('pages/index' , $data );
         }
-
-    
         
         
         public function registration(){
@@ -29,15 +25,17 @@
             $pw = $_POST['pw'];
             $email = $_POST['email'];
 
+
             $userToAdd = new AppUser();
             $userToAdd->setUserId($userId);
             $userToAdd->setUsername($username);
             $userToAdd->setPw($pw);
             $userToAdd->setEmail($email);
 
+            
 
             $role = new Role();
-            $role->setRoleName("autuer");
+            $role->setRoleName("author");
 
 
             $roleOfUser = new RoleOfUser();
@@ -45,6 +43,7 @@
             $roleOfUser->setRole($role);
             $SecurityService = new SecurityServiceImp();
             $roleOfUserService = new RoleOfUserServicesImp();
+            
 
             try{
                 $SecurityService->register($userToAdd);
@@ -58,11 +57,10 @@
             $this->view('pages/registration');
         }
 
-
         public function login() {
             if (isset($_POST["login"])) {
                 $username = $_POST["username"];
-                $password = $_POST["pw"]; 
+                $password = $_POST["pw"]; // Don't use password_verify here
         
                 $logging = new AppUser();
                 $logging->setUsername($username);
@@ -78,15 +76,14 @@
                         $_SESSION["userId"] = $loggingUserData->userId;
         
                         $role = $securityService->checkForRole($loggingUserData->userId);
-                        $_SESSION["roleName"] = $role->roleName;
         
-                        if ($role->roleName == "autuer") {
-                            $_SESSION["roleName"] = "autuer";
+                        if ($role->roleName == "author") {
+                            $_SESSION["roleName"] = "author";
                             header("Location:". URLROOT . "/customer/home");
-
-                        }else if($role->roleName == "admin") {
+                            exit();
+                        } else if($role->roleName == "admin") {
                             $_SESSION["roleName"] = "admin";
-                            header("Location:" . URLROOT . "/admin/admin");
+                            header("Location:" . URLROOT . "/admin/dashboard");
                             exit();
                         }
                     }

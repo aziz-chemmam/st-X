@@ -1,6 +1,6 @@
 <?php 
 
-class SecurityServiceImp implements SecurityService {
+class SecurityServiceImp implements SecurityService{
     private Database $db;
 
     public function __construct(){
@@ -8,7 +8,7 @@ class SecurityServiceImp implements SecurityService {
     }
 
     public function register(AppUser $user){
-        $registerQuery = "INSERT INTO appUser (userId, username, pw, email, userImg, created_at) VALUES (:userId, :username, :pw, :email, :userImg, NOW())";
+        $registerQuery = "INSERT INTO appUser VALUES (:userId, :username, :pw, :email, :userImg, NOW())";
         $this->db->query($registerQuery);
     
         $this->db->bind(":userId", $user->getUserId());
@@ -52,16 +52,16 @@ class SecurityServiceImp implements SecurityService {
         if(empty($_SESSION["roleName"])){
             header("location:".URLROOT);
         }
-        else if($_SESSION["roleName"] === "autuer"){
-            header("location:".URLROOT."customer/home");
+        else if($_SESSION["roleName"] === "author"){
+            header("location:".URLROOT."/customer/home");
         }
     }
 
-    public function checkForautuer(){
+    public function checkForAuthor(){
         if(empty($_SESSION["roleName"])){
             header("location:".URLROOT);
     }else if ($_SESSION["roleName"] === "admin"){
-            header("location:".URLROOT."admin/adminDashboard");
+            header("location:".URLROOT."/admin/dashboard");
     }
 }
 
